@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -69,6 +70,21 @@ public class ProductServiceImpl implements ProductService{
             throw new ResourceNotFoundException("Record not found with id : " + productId);
         }
 
+    }
+
+
+    @Override
+    public Product getProductByName(String productName) {
+
+        Long productId = Long.valueOf(1);
+
+        Optional<Product> productDb = this.productRepository.findByName(productName);
+
+        if(productDb.isPresent()) {
+            return productDb.get();
+        }else {
+            throw new ResourceNotFoundException("Record not found with Name : " + productName);
+        }
     }
 
 }
