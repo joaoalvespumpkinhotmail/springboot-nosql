@@ -16,10 +16,8 @@ import com.pumpkin.nosql.repository.ProductRepository;
 @Transactional
 public class ProductServiceImpl implements ProductService{
 
-
     @Autowired
     private ProductRepository productRepository;
-
 
     @Override
     public Product createProduct(Product product) {
@@ -35,6 +33,7 @@ public class ProductServiceImpl implements ProductService{
             productUpdate.setId(product.getId());
             productUpdate.setName(product.getName());
             productUpdate.setDescription(product.getDescription());
+            productUpdate.setValor(product.getValor());
             productRepository.save(productUpdate);
             return productUpdate;
         }else {

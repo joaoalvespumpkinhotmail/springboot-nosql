@@ -20,6 +20,8 @@ public class Product {
     private String name;
     private String description;
 
+    private String valor;
+
     public long getId() {
         return id;
     }
@@ -37,5 +39,13 @@ public class Product {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getValor(){
+        return valor;
+    }
+
+    public void setValor(String valor){
+        this.valor = valor;
     }
 }
