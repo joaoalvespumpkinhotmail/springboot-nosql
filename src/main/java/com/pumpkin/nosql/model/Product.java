@@ -20,6 +20,8 @@ public class Product {
     private String name;
     private String description;
 
+    private String preco_venda;
+
     private String valor;
 
     public long getId() {
@@ -47,5 +49,13 @@ public class Product {
 
     public void setValor(String valor){
         this.valor = valor;
+    }
+
+    public String getPreco_venda(){
+        return preco_venda;
+    }
+
+    public void setPreco_venda(String preco_venda){
+        this.preco_venda = preco_venda;
     }
 }
